@@ -61,6 +61,14 @@ class TripsController < ApplicationController
     end
   end
 
+  def search
+  end
+
+  def results
+    sleep(10)
+    @trips = Trip.search(params[:search])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_trip

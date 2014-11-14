@@ -1,5 +1,9 @@
 Nov14Spike::Application.routes.draw do
   resources :trips
+  get 'trip/search' => 'trips#search'
+  post 'trip/results' => 'trips#results'
+  get 'trip/results' => 'trips#search'
+  root 'trips#search'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

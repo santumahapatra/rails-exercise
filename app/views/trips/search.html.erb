@@ -1,0 +1,21 @@
+
+<div id="search_form_container">
+  <%= form_tag :controller => 'trips', :action => 'results' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+  <% end %>
+</div>
+
+<div id="loading">
+  <p>Loading.....</p>
+  <p>I will try to not be loading forever and ever.</p>
+</div>
+
+<script>
+$("input:submit").click(function(e){
+  $("#loading").show();
+  $("#search_form_container").hide();
+});
+</script>
