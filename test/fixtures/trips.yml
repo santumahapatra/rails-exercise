@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from: MyText
+  to: MyText
+  date_of_journey: 2014-11-14 14:33:37
+
+two:
+  from: MyText
+  to: MyText
+  date_of_journey: 2014-11-14 14:33:37
