@@ -62,10 +62,11 @@ class TripsController < ApplicationController
   end
 
   def search
+
   end
 
   def results
-    sleep(10)
+    thread_start
     @trips = Trip.search(params[:search])
   end
 
@@ -78,5 +79,14 @@ class TripsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def trip_params
       params.require(:trip).permit(:from, :to, :date_of_journey)
+    end
+
+    def thread_start
+      t = Thread.new{sleep_properly}
+      t.join
+    end
+
+    def sleep_properly
+      sleep(2)
     end
 end
